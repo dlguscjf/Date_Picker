@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func datepicker(_ sender: Any) {
         let dateformatter = DateFormatter()
         dateformatter.locale = Locale(identifier: "ko_KR")
-        dateformatter.dateFormat="a yyyy-MM-dd EEE"
+        dateformatter.dateFormat="yyyy-MM-dd a HH:mm:ss EEE"
         let date = dateformatter.string(from: datepicker.date)
         datetext.text = date
        
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         let date1 = Date()
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
-        formatter.dateFormat = "a HH:mm:ss EEE"
+        formatter.dateFormat = "yyyy-MM-dd a HH:mm:ss EEE"
         let time1 = formatter.string(from: date1)
         time.text = time1
     }
