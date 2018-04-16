@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 
     @IBAction func btu(_ sender: Any) {
          view.backgroundColor = UIColor.white
+        
     }
     
 
@@ -47,7 +48,17 @@ class ViewController: UIViewController {
         time.text = time1
         if datetext.text == time.text{
             view.backgroundColor = UIColor.red
+            alert()
         }
+  
+}
+    func alert(){
+        let alert = UIAlertController(title: "알람", message: "취소하시겠습니까?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default, handler: {(action: UIAlertAction!) in self.view.backgroundColor = UIColor.white})
+        let no = UIAlertAction(title: "취소", style: .default, handler:nil)
+        alert.addAction(ok)
+        alert.addAction(no)
+        
+        self.present(alert,animated: true,completion: nil)
     }
 }
-
