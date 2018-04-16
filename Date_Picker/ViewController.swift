@@ -20,9 +20,13 @@ class ViewController: UIViewController {
        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {(myTimer) in
             self.updatetime()})
+       
     }
 
-
+    @IBAction func btu(_ sender: Any) {
+         view.backgroundColor = UIColor.white
+    }
+    
 
     @IBAction func datepicker(_ sender: Any) {
         let dateformatter = DateFormatter()
@@ -30,7 +34,8 @@ class ViewController: UIViewController {
         dateformatter.dateFormat="yyyy-MM-dd a HH:mm:ss EEE"
         let date = dateformatter.string(from: datepicker.date)
         datetext.text = date
-       
+        
+        
         
     }
     func updatetime(){
@@ -40,6 +45,9 @@ class ViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd a HH:mm:ss EEE"
         let time1 = formatter.string(from: date1)
         time.text = time1
+        if datetext.text == time.text{
+            view.backgroundColor = UIColor.red
+        }
     }
 }
 
